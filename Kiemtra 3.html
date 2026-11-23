@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bài tập 24 - Tổng hợp kết quả & Đèn kéo quân JS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Thanh thông tin sinh viên (hiển thị rõ Mã SV khi chụp màn hình nộp bài) -->
+  <div class="student-banner">
+    <div class="container banner-flex">
+      <span><strong>Sinh viên:</strong> Huỳnh Đăng Khoa</span>
+      <span><strong>MSSV:</strong> 241A010627</span>
+      <span><strong>Lớp:</strong> 261INT440710</span>
+    </div>
+  </div>
+
+  <!-- Menu chính điều hướng đến các trang nhánh BT 17 -> 22 và Đèn kéo quân -->
+  <header class="main-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">BÀI TẬP 24<span>.WEB</span></a>
+      <nav class="main-menu">
+        <a href="index.html" class="active">Trang chủ</a>
+        <a href="bt17.html">Bài 17</a>
+        <a href="bt18.html">Bài 18</a>
+        <a href="bt19.html">Bài 19</a>
+        <a href="bt20.html">Bài 20</a>
+        <a href="bt21.html">Bài 21</a>
+        <a href="bt22.html">Bài 22</a>
+        <a href="den-keo-quan.html" class="menu-highlight">Đèn kéo quân (JS)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="intro-box">
+      <h1>Tổng Hợp Kết Quả Thực Hành Lập Trình Web</h1>
+      <p>
+        Trang chủ <strong>Bài tập 24</strong> liên kết đến các trang nhánh kết quả từ
+        <strong>Bài 17 đến Bài 22</strong> và trang ứng dụng hiệu ứng JavaScript
+        <strong>Đèn kéo quân 3D</strong>.
+      </p>
+      <a href="den-keo-quan.html" class="btn-primary">Xem hiệu ứng Đèn kéo quân 3D →</a>
+    </section>
+
+    <!-- Lưới hiển thị hình kết quả các bài tập -->
+    <section class="gallery-grid">
+      <!-- Nổi bật: Đèn kéo quân -->
+      <article class="card featured-card">
+        <div class="card-img">
+          <img
+            src="images/anh1.jpg"
+            alt="Kết quả Đèn kéo quân JavaScript"
+            onerror="this.src='https://placehold.co/600x360/b91c1c/fef08a?text=Den+Keo+Quan+JavaScript+3D'"
+          />
+        </div>
+        <div class="card-body">
+          <span class="tag tag-js">JavaScript Effect</span>
+          <h2>Đèn Kéo Quân 6 Mặt Ảnh</h2>
+          <p>Hiệu ứng xoay vòng tròn 3D bằng JavaScript: đưa chuột vào ảnh đèn dừng lại, rê chuột ra đèn quay tiếp.</p>
+          <a href="den-keo-quan.html" class="card-link">Mở trang Đèn kéo quân →</a>
+        </div>
+      </article>
+
+      <!-- Bài tập 17 -->
+      <article class="card">
+        <div class="card-img">
+          <img
+            src="images/kq-bt17.png"
+            alt="Kết quả Bài tập 17"
+            onerror="this.src='https://placehold.co/600x360/1e3a8a/ffffff?text=Ket+Qua+Bai+Tap+17'"
+          />
+        </div>
+        <div class="card-body">
+          <span class="tag">Bài tập 17</span>
+          <h2>Kết quả Bài tập 17</h2>
+          <p>Trang nhánh hiển thị giao diện thực hành và hình ảnh kết quả chạy thực tế của Bài 17.</p>
+          <a href="bt17.html" class="card-link">Xem chi tiết Bài 17 →</a>
+        </div>
+      </article>
+
+      <!-- Bài tập 18 -->
+      <article class="card">
+        <div class="card-img">
+          <img
+            src="images/kq-bt18.png"
+            alt="Kết quả Bài tập 18"
+            onerror="this.src='https://placehold.co/600x360/1e40af/ffffff?text=Ket+Qua+Bai+Tap+18'"
+          />
+        </div>
+        <div class="card-body">
+          <span class="tag">Bài tập 18</span>
+          <h2>Kết quả Bài tập 18</h2>
+          <p>Trang nhánh hiển thị giao diện thực hành và hình ảnh kết quả chạy thực tế của Bài 18.</p>
+          <a href="bt18.html" class="card-link">Xem chi tiết Bài 18 →</a>
+        </div>
+      </article>
+
+      <!-- Bài tập 19 -->
+      <article class="card">
+        <div class="card-img">
+          <img
+            src="images/kq-bt19.png"
+            alt="Kết quả Bài tập 19"
+            onerror="this.src='https://placehold.co/600x360/0f766e/ffffff?text=Ket+Qua+Bai+Tap+19'"
+          />
+        </div>
+        <div class="card-body">
+          <span class="tag">Bài tập 19</span>
+          <h2>Kết quả Bài tập 19</h2>
+          <p>Trang nhánh hiển thị giao diện thực hành và hình ảnh kết quả chạy thực tế của Bài 19.</p>
+          <a href="bt19.html" class="card-link">Xem chi tiết Bài 19 →</a>
+        </div>
+      </article>
+
+      <!-- Bài tập 20 -->
+      <article class="card">
+        <div class="card-img">
+          <img
+            src="images/kq-bt20.png"
+            alt="Kết quả Bài tập 20"
+            onerror="this.src='https://placehold.co/600x360/047857/ffffff?text=Ket+Qua+Bai+Tap+20'"
+          />
+        </div>
+        <div class="card-body">
+          <span class="tag">Bài tập 20</span>
+          <h2>Kết quả Bài tập 20</h2>
+          <p>Trang nhánh hiển thị giao diện thực hành và hình ảnh kết quả chạy thực tế của Bài 20.</p>
+          <a href="bt20.html" class="card-link">Xem chi tiết Bài 20 →</a>
+        </div>
+      </article>
+
+      <!-- Bài tập 21 -->
+      <article class="card">
+        <div class="card-img">
+          <img
+            src="images/kq-bt21.png"
+            alt="Kết quả Bài tập 21"
+            onerror="this.src='https://placehold.co/600x360/6d28d9/ffffff?text=Ket+Qua+Bai+Tap+21'"
+          />
+        </div>
+        <div class="card-body">
+          <span class="tag">Bài tập 21</span>
+          <h2>Kết quả Bài tập 21</h2>
+          <p>Trang nhánh hiển thị giao diện thực hành và hình ảnh kết quả chạy thực tế của Bài 21.</p>
+          <a href="bt21.html" class="card-link">Xem chi tiết Bài 21 →</a>
+        </div>
+      </article>
+
+      <!-- Bài tập 22 -->
+      <article class="card">
+        <div class="card-img">
+          <img
+            src="images/kq-bt22.png"
+            alt="Kết quả Bài tập 22"
+            onerror="this.src='https://placehold.co/600x360/b45309/ffffff?text=Ket+Qua+Bai+Tap+22'"
+          />
+        </div>
+        <div class="card-body">
+          <span class="tag">Bài tập 22</span>
+          <h2>Kết quả Bài tập 22</h2>
+          <p>Trang nhánh hiển thị giao diện thực hành và hình ảnh kết quả chạy thực tế của Bài 22.</p>
+          <a href="bt22.html" class="card-link">Xem chi tiết Bài 22 →</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <p>Bài tập 24 - Lập trình Web | SV: Huỳnh Đăng Khoa - MSSV: 241A010627</p>
+  </footer>
+</body>
+</html>

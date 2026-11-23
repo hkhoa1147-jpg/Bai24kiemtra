@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đèn Kéo Quân JavaScript - MSSV 241A010627</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="lantern-page">
+  <!-- Thanh thông tin sinh viên -->
+  <div class="student-banner">
+    <div class="container banner-flex">
+      <span><strong>Sinh viên:</strong> Huỳnh Đăng Khoa</span>
+      <span><strong>MSSV:</strong> 241A010627</span>
+      <span><strong>Bài thực hành:</strong> Đèn kéo quân (JavaScript)</span>
+    </div>
+  </div>
+
+  <!-- Menu chính -->
+  <header class="main-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">BÀI TẬP 24<span>.WEB</span></a>
+      <nav class="main-menu">
+        <a href="index.html">Trang chủ</a>
+        <a href="bt17.html">Bài 17</a>
+        <a href="bt18.html">Bài 18</a>
+        <a href="bt19.html">Bài 19</a>
+        <a href="bt20.html">Bài 20</a>
+        <a href="bt21.html">Bài 21</a>
+        <a href="bt22.html">Bài 22</a>
+        <a href="den-keo-quan.html" class="active menu-highlight">Đèn kéo quân (JS)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container lantern-wrapper">
+    <div class="lantern-title">
+      <h1>Đèn Kéo Quân 6 Mặt Ảnh Cá Nhân</h1>
+      <p>Đưa chuột vào 1 hình bất kỳ trên thân đèn để <strong>dừng lại</strong> — Rê chuột ra ngoài để đèn <strong>quay tiếp</strong>.</p>
+      <div id="status-badge" class="status-badge">Trạng thái: Đèn đang quay vòng tròn...</div>
+    </div>
+
+    <!-- Khung không gian 3D cho Đèn kéo quân -->
+    <div class="lantern-stage">
+      <!-- Nóc đèn trang trí -->
+      <div class="lantern-top"></div>
+
+      <!-- Lồng đèn 6 mặt quay bằng JavaScript -->
+      <div class="lantern-carousel" id="lantern">
+        <div class="lantern-face" style="--i: 0;">
+          <img
+            src="images/anh1.jpg"
+            alt="Ảnh cá nhân 1"
+            onerror="this.src='https://placehold.co/300x360/dc2626/fef08a?text=Anh+Ca+Nhan+1'"
+          />
+          <span>Mặt 1</span>
+        </div>
+
+        <div class="lantern-face" style="--i: 1;">
+          <img
+            src="images/anh2.jpg"
+            alt="Ảnh cá nhân 2"
+            onerror="this.src='https://placehold.co/300x360/ea580c/fef08a?text=Anh+Ca+Nhan+2'"
+          />
+          <span>Mặt 2</span>
+        </div>
+
+        <div class="lantern-face" style="--i: 2;">
+          <img
+            src="images/anh3.jpg"
+            alt="Ảnh cá nhân 3"
+            onerror="this.src='https://placehold.co/300x360/ca8a04/ffffff?text=Anh+Ca+Nhan+3'"
+          />
+          <span>Mặt 3</span>
+        </div>
+
+        <div class="lantern-face" style="--i: 3;">
+          <img
+            src="images/anh4.jpg"
+            alt="Ảnh cá nhân 4"
+            onerror="this.src='https://placehold.co/300x360/16a34a/fef08a?text=Anh+Ca+Nhan+4'"
+          />
+          <span>Mặt 4</span>
+        </div>
+
+        <div class="lantern-face" style="--i: 4;">
+          <img
+            src="images/anh5.jpg"
+            alt="Ảnh cá nhân 5"
+            onerror="this.src='https://placehold.co/300x360/2563eb/fef08a?text=Anh+Ca+Nhan+5'"
+          />
+          <span>Mặt 5</span>
+        </div>
+
+        <div class="lantern-face" style="--i: 5;">
+          <img
+            src="images/anh6.jpg"
+            alt="Ảnh cá nhân 6"
+            onerror="this.src='https://placehold.co/300x360/9333ea/fef08a?text=Anh+Ca+Nhan+6'"
+          />
+          <span>Mặt 6</span>
+        </div>
+      </div>
+
+      <!-- Đế đèn trang trí -->
+      <div class="lantern-bottom"></div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <p>Hiệu ứng JavaScript Đèn Kéo Quân | SV: Huỳnh Đăng Khoa - MSSV: 241A010627</p>
+  </footer>
+
+  <!-- Script điều khiển chuyển động Đèn kéo quân -->
+  <script>
+    const lantern = document.getElementById("lantern");
+    const faces = document.querySelectorAll(".lantern-face");
+    const statusBadge = document.getElementById("status-badge");
+
+    let angle = 0;          // Góc xoay hiện tại (độ)
+    let isPaused = false;   // Trạng thái dừng/quay
+    const rotateSpeed = 0.4; // Tốc độ quay (độ mỗi khung hình)
+
+    // Hàm vòng lặp hoạt ảnh bằng JavaScript
+    function animateLantern() {
+      if (!isPaused) {
+        angle = (angle + rotateSpeed) % 360;
+        lantern.style.transform = `rotateY(${angle}deg)`;
+      }
+      requestAnimationFrame(animateLantern);
+    }
+
+    // Lắng nghe sự kiện chuột trên từng mặt của đèn kéo quân
+    faces.forEach((face, index) => {
+      face.addEventListener("mouseenter", () => {
+        isPaused = true;
+        face.classList.add("is-hovered");
+        statusBadge.textContent = `Trạng thái: Đang dừng lại tại Mặt số ${index + 1}`;
+        statusBadge.classList.add("paused");
+      });
+
+      face.addEventListener("mouseleave", () => {
+        isPaused = false;
+        face.classList.remove("is-hovered");
+        statusBadge.textContent = "Trạng thái: Đèn đang quay vòng tròn...";
+        statusBadge.classList.remove("paused");
+      });
+    });
+
+    // Bắt đầu cho đèn quay
+    animateLantern();
+  </script>
+</body>
+</html>
